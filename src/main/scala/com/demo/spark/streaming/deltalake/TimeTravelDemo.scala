@@ -19,7 +19,7 @@ object TimeTravelDemo {
       .config("spark.hadoop.fs.s3a.secret.key", s3Config.getString("secret_access_key"))
       .appName("DeltaTable Example")
       .getOrCreate()
-    spark.sparkContext.setLogLevel(Constants.ERROR)
+    spark.sparkContext.setLogLevel("ERROR")
     import spark.implicits._
 
     val deltaTablePath = s"s3a://${s3Config.getString("s3_bucket")}/delta_Kafka_data"
